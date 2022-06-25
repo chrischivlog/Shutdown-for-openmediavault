@@ -2,9 +2,10 @@
 
 import os
 
-ip1 = '192.168.178.40'
+ips = ['192.168.178.41','192.168.178.40']
 
-response = os.system("ping -c 1 " + ip1)
+for i in ips: 
+   response = os.system("ping -c 1 " + i)
 
 if response == 0:
     print("erreichbar")
