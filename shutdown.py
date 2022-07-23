@@ -13,14 +13,14 @@ for i in ips:
         response_ping = os.system("ping -c 1 " + i)
         print(response_ping)
         
-        if response_ping == 512:
+        if response_ping > 0:
                 off_devices += 1
 
-                counted_off_devices = off_devices
-                print('Geräte offline:', counted_off_devices, '; IPs gezählt:', sumips)
+                countedoffdevices = off_devices
+                print('Geräte offline:', countedoffdevices, '; IPs gezählt:', sumips)
 
 
-if counted_off_devices == sumips:
+if countedoffdevices == sumips:
     print('shutdown')
     os.system("shutdown -h now")
 
